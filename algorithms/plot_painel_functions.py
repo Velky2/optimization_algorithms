@@ -59,7 +59,7 @@ def aplicar_estilo_artigo():
 
         # Legenda
         "legend.frameon":         True,
-        "legend.framealpha":      0.92,
+        "legend.framealpha":      0.90,
         "legend.edgecolor":       "#c0bcb4",
         "legend.fancybox":        False,
 
