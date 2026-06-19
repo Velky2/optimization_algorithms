@@ -100,17 +100,16 @@ O problema **barra tracionada** funciona como teste de sanidade: tem ótimo anal
 
 ## Solvers internos
 
-**CMA-ES** (via [`pycma`](https://github.com/CMA-ES/pycma)) — estratégia evolutiva com adaptação da matriz de covariância. Tamanho de população padrão $4 + \lfloor 3\ln d \rfloor$, $\sigma_0 \approx 0{,}2$–$0{,}3$, orçamento de 500 avaliações por subproblema.
-
+**CMA-ES** (via [`pycma`](https://github.com/CMA-ES/pycma)) — estratégia evolutiva com adaptação da matriz de covariância.
 **TuRBO** (via [BoTorch](https://botorch.org/)/[GPyTorch](https://gpytorch.ai/)) — otimização Bayesiana com região de confiança. GP `SingleTaskGP` com kernel Matérn-5/2 ARD, candidatos por Thompson Sampling (`MaxPosteriorSampling`), inicialização Sobol, região de confiança adaptada por contadores de sucesso/falha.
 
 ---
 
 ## Benchmarking na suite bbob-constrained (`COCO/`)
 
-Além da aplicação aos problemas FEM, o repositório inclui um estudo de **benchmarking padronizado** na plataforma [COCO](https://github.com/numbbo/coco) (Comparing Continuous Optimizers), usando o conjunto **bbob-constrained**. O objetivo é avaliar, de forma reprodutível e em larga escala, se as variantes com Lagrangiano Aumentado oferecem vantagem sobre os solvers puros.
+Além da aplicação aos problemas FEM, o repositório inclui um estudo de **benchmarking padronizado** na plataforma [COCO](https://github.com/numbbo/coco) (Comparing Continuous Optimizers), usando o conjunto **bbob-constrained**. O objetivo é avaliar, de forma reprodutível e em larga escala, as vantagens de cada backbone para o Lagrangiano Aumentado.
 
-Quatro configurações são comparadas sob paridade de orçamento:
+Duas configurações são comparadas sob paridade de orçamento:
 
 - **AL-TuRBO** e **AL-CMA-ES** — Lagrangiano Aumentado no laço externo, com o respectivo solver resolvendo cada subproblema (estado do solver reaproveitado entre iterações externas: comprimento da região de confiança no TuRBO, objeto da estratégia evolutiva no CMA-ES).
 
