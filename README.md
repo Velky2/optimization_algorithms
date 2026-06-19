@@ -200,5 +200,6 @@ Distribuído sob a licença **MIT**. Ver [`LICENSE`](LICENSE).
 
 ## Autoria
 
-Edélio Gabriel Magalhães de Jesus (Ilum)
-Matheus Pereira Velloso da Silveira (Ilum)
+- Edélio Gabriel Magalhães de Jesus (Ilum)
+
+- Matheus Pereira Velloso da Silveira (Ilum)
